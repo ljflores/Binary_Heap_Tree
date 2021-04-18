@@ -10,18 +10,19 @@
 
     <h1 tabindex = "0" id="shortcuts">Keyboard Shortcuts:</h1>
     <p>
-      <ul>
+      <ol>
         <li>Press "+" to move forward one step.</li>
         <li>Press "-" to move backward one step.</li>
-      </ul>
+        <li>Use your screen reader's header navigation keys to explore the nodes.</li>
+      </ol>
     </p>
 
     <h1 tabindex = "0" id="log">What Changed:</h1>
     <p>
-        <ul>
+        <ol>
           <li>You are in Step 2.</li>
-          <li><strong>Node 80 was added to level 3 as the left child of Node 40.</strong></li>
-        </ul>
+          <li>Node 80 was added to level 3 as the left child of Node 40.</li>
+        </ol>
     </p>
 
     <label for="hide">Select to hide irrelevant parts of the tree:</label>
@@ -30,63 +31,63 @@
    <!--The graph:-->
    <h1 tabindex = "0" id="60">60</h1>
    <p>
-     <ul>
-       <li>Parent: root</li>
+     <ol>
+       <li>Parent: None because root</li>
        <li>Level: 1</li>
        <li>Children: 30, 40</li>
-     </ul>
+     </ol>
    </p>
 
   <div id="group30">
     <h2 tabindex = "0" id="30">30</h2>
     <p>
-      <ul>
+      <ol>
         <li>Parent: 60</li>
         <li>Level: 2</li>
         <li>Children: 10, 20</li>
-      </ul>
+      </ol>
     </p>
   </div>
 
   <div id="group10_20">
     <h3 tabindex = "0" id="10">10</h3>
     <p>
-      <ul>
+      <ol>
         <li>Parent: 30</li>
         <li>Level: 3</li>
-        <li>Children: none</li>
-      </ul>
+        <li>Children: None</li>
+      </ol>
     </p>
     <h3 tabindex = "0" id="20">20</h3>
     <p>
-      <ul>
+      <ol>
         <li>Parent: 30</li>
         <li>Level: 3</li>
-        <li>Children: none</li>
-      </ul>
+        <li>Children: None</li>
+      </ol>
     </p>
   </div>
 
 <div id="group40">
   <h2 tabindex = "0" id="40">40</h2>
   <p>
-    <ul>
+    <ol>
       <li>Parent: 60</li>
       <li>Level: 2</li>
-      <li>Children: Changed from none to 80.</li>
-    </ul>
+      <li>Children: Changed from None to 80.</li>
+    </ol>
   </p>
 </div>
 
 <div id="group80">
     <h3 tabindex = "0" id="80" onfocus="newSound.play()">80</h3>
     <p>
-      <ul>
-        <li>This node was added.</li>
+      <ol>
+        <li>Change: 80 was added as the left child of 40.</li>
         <li>Parent: 40</li>
         <li>Level: 3</li>
-        <li>Children: none</li>
-      </ul>
+        <li>Children: None</li>
+      </ol>
     </p>
   </div>
 
