@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Step 3</title>
+
+  </head>
+  <body>
+    <!--CONTENT OF DOCUMENT-->
+
+    <p>
+      You are in Step 3.
+    </p>
+  
+    <p>
+      Keyboard Shortcuts:
+      <ul>
+        <li>Press the "S" key to move forward through each step.</li>
+        <li>Use your screen reader's header navigation keys to step forward and backward through nodes.</li>
+        <li>Press "Arrow Up" while focused on a node to jump to the node's parent.</li>
+        <li>Press "Arrow Down" while focused on a node to jump to the node's left child.</li>
+        <li>Press the "Arrow Right" key while focused on a node to jump to the node's neighbor.</li>
+      </ul>
+    </p>
+
+    <p>
+        Log:
+        <ul>
+          <li>Node 80 was added to level 3 as the left child of Node 40.</li>
+          <li><em>Node 80 was compared to Node 40.</em></li>
+          <li><em>Node 80 swapped places with Node 40.</em></li>
+        </ul>
+      </p>
+
+      <label for="hide">Select to hide irrelevant parts of the tree:</label>
+      <input type="checkbox" id="hide" name="hide" value="hide" onclick="self.hideBranch()">
+
+   <!--The graph:-->
+   <h1 tabindex = "0" id="60">60</h1>
+   <p>
+     <ul>
+       <li>Parent: root</li>
+       <li>Level: 1</li>
+       <li>Children: 30, 40</li>
+     </ul>
+   </p>
+
+  <div id="group30">
+    <h2 tabindex = "0" id="30">30</h2>
+    <p>
+      <ul>
+        <li>Parent: 60</li>
+        <li>Level: 2</li>
+        <li>Children: 10, 20</li>
+      </ul>
+    </p>
+  </div>
+
+  <div id="group10_20">
+    <h3 tabindex = "0" id="10">10</h3>
+    <p>
+      <ul>
+        <li>Parent: 30</li>
+        <li>Level: 3</li>
+        <li>Children: none</li>
+      </ul>
+    </p>
+    <h3 tabindex = "0" id="20">20</h3>
+    <p>
+      <ul>
+        <li>Parent: 30</li>
+        <li>Level: 3</li>
+        <li>Children: none</li>
+      </ul>
+    </p>
+  </div>
+
+<div id="group80">
+    <h2 tabindex = "0" id="80" onfocus="newSound.play()">80</h2>
+    <p>
+      <ul>
+        <li>Swapped places with 40.</li>
+        <li>Parent: Changed from 40 to 60</li>
+        <li>Level: Changed from 3 to 2</li>
+        <li>Children: Changed from none to 40</li>
+      </ul>
+    </p>
+</div>
+
+<div id="group40">
+  <h3 tabindex = "0" id="40" onfocus="newSound.play()">40</h3>
+  <p>
+    <ul>
+        <li>Swapped places with 80.</li>
+        <li>Parent: Changed from 60 to 80</li>
+      <li>Level: Changed from 2 to 3</li>
+      <li>Children: Changed from 80 to none.</li>
+    </ul>
+  </p>
+</div>
+
+  <script>
+
+    // adding a sound
+    var newSound = new Audio();
+    newSound.src = "Highlight.m4a"
+
+    function hideBranch() {
+      if (document.getElementById("hide").checked == true) {
+        document.getElementById("group30").style.visibility="hidden";
+        document.getElementById("group10_20").style.visibility="hidden";
+      }
+      else {
+        document.getElementById("group30").style.visibility="visible";
+        document.getElementById("group10_20").style.visibility="visible";
+      }
+    }
+
+     var child;
+     function goToParent() {
+          if (document.activeElement.id == "30") {
+            window.location.href = "#60";
+          }
+          else if (document.activeElement.id == "40") {
+            window.location.href = "#80";
+          }
+          else if (document.activeElement.id == "10") {
+            window.location.href = "#30";
+          }
+          else if (document.activeElement.id == "20") {
+            window.location.href = "#30";
+          }
+          else if (document.activeElement.id == "80") {
+            window.location.href = "#60";
+          }
+      }
+    
+      function goToChild() {
+          if (document.activeElement.id == "60") {
+            window.location.href = "#30";
+          }
+          else if (document.activeElement.id == "30") {
+            window.location.href = "#10";
+          }
+          else if (document.activeElement.id == "80") {
+            window.location.href = "#40";
+          }
+        }
+
+      function goToNeighbor() {
+          if (document.activeElement.id == "30") {
+            window.location.href = "#80";
+          }
+          else if (document.activeElement.id == "80") {
+            window.location.href = "#30";
+          }
+          else if (document.activeElement.id == "10") {
+            window.location.href = "#20";
+          }
+          else if (document.activeElement.id == "20") {
+            window.location.href = "#10";
+          }
+        }
+
+   document.addEventListener('keyup', (e) => {
+        // If the key is S, switch to the next step while focusing on the same active element's id.
+        if (e.key == "s") {
+            window.location.href = "index4.html#" + document.activeElement.id;
+        }
+        // If the key is Arrow Up, go to the active node's parent.
+        if (e.keyCode == "38") {
+          self.goToParent();
+        }
+
+        // If the key is Arrow Down, go back to the node's left child.
+        if (e.keyCode == "40") {
+          self.goToChild();
+        }
+
+        // If the key is Arrow Right, go to the current node's neighbor.
+        if (e.keyCode == "39") {
+          self.goToNeighbor();
+        }
+    });
+   </script>
+
+    <!--END CONTENT OF DOCUMENT-->
+  </body>
+</html> 
