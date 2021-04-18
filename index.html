@@ -1,1 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Step 1</title>
 
+  </head>
+  <body>
+    <!--CONTENT OF DOCUMENT-->
+
+    <p>
+      You are in Step 1.
+    </p>
+  
+    <p>
+      Keyboard Shortcuts:
+      <ul>
+        <li>Press the "P" key to switch between Past and Present.</li>
+        <li>Press the "S" key to move forward through each step.</li>
+        <li>Use your screen reader's header navigation keys to step forward and backward through nodes.</li>
+        <li>Press "Arrow Up" while focused on a node to jump to the node's parent.</li>
+        <li>Press "Arrow Down" while focused on a node to jump to the node's left child.</li>
+        <li>Press the "Arrow Right" key while focused on a node to jump to the node's neighbor.</li>
+      </ul>
+    </p>
+
+   <!--The graph:-->
+   <h1 tabindex = "0" id="60">60</h1>
+   <p>
+     <ul>
+       <li>Parent: root</li>
+       <li>Level: 1</li>
+       <li>Children: 30, 40</li>
+     </ul>
+   </p>
+
+  <div id="group30">
+    <h2 tabindex = "0" id="30">30</h2>
+    <p>
+      <ul>
+        <li>Parent: 60</li>
+        <li>Level: 2</li>
+        <li>Children: 10, 20</li>
+      </ul>
+    </p>
+  </div>
+
+  <div id="group10_20">
+    <h3 tabindex = "0" id="10">10</h3>
+    <p>
+      <ul>
+        <li>Parent: 30</li>
+        <li>Level: 3</li>
+        <li>Children: none</li>
+      </ul>
+    </p>
+    <h3 tabindex = "0" id="20">20</h3>
+    <p>
+      <ul>
+        <li>Parent: 30</li>
+        <li>Level: 3</li>
+        <li>Children: none</li>
+      </ul>
+    </p>
+  </div>
+
+<div id="group40">
+  <h2 tabindex = "0" id="40">40</h2>
+  <p>
+    <ul>
+      <li>Parent: 60</li>
+      <li>Level: 2</li>
+      <li>Children: none</li>
+    </ul>
+  </p>
+</div>
+
+  <script>
+      
+    var map = {}; // You could also use an array
+    onkeydown = onkeyup = function(e){
+        e = e || event; // to deal with IE
+        map[e.keyCode] = e.type == 'keydown';
+    
+        // Shift + P
+        if (map[16] && map[80]) {
+            console.log(map);
+            console.log("Shift + P");
+            console.log(" ");
+        }
+    }
+
+  </script>
+
+    <!--END CONTENT OF DOCUMENT-->
+  </body>
+</html> 
