@@ -113,6 +113,19 @@
         document.getElementById("group10_20").style.visibility="visible";
       }
     }
+
+    var map = {}; // You could also use an array
+    onkeydown = onkeyup = function(e){
+      e = e || event; // to deal with IE
+      map[e.key] = e.type == 'keydown';
+      console.log(map);
+      if (map["+"]) {
+        window.location.href = "index.html#" + document.activeElement.id;
+      }
+      if (map["-"]) {
+        window.location.href = "index3.html#" + document.activeElement.id;
+      }
+    }
    </script>
 
     <!--END CONTENT OF DOCUMENT-->
