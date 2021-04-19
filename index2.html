@@ -111,12 +111,12 @@
     var map = {}; // You could also use an array
     onkeydown = onkeyup = function(e){
       e = e || event; // to deal with IE
-      map[e.keyCode] = e.type == 'keydown';
+      map[e.key] = e.type == 'keydown';
       console.log(map);
-      if (map[189]) {
+      if (map["+"]) {
         window.location.href = "index3.html#" + document.activeElement.id;
       }
-      if (map[16] && map[189]) {
+      if (map["-"]) {
         window.location.href = "index.html#" + document.activeElement.id;
       }
     }
