@@ -89,14 +89,31 @@
         <li>There are no children.</li>
       </ol>
     </p>
-  </div>
+</div>
+
+<!--Backwards dialog for 80-->
+<dialog id="dialog_backwards" role="dialog" aria-labelledby="dialog">
+  Node 80 does not exist in the previous step.
+  <a href="index.html#40">Click here to move to 40, 80's parent.</a>
+</dialog>
+
+<!--Forward dialog for 80-->
+<dialog id="dialog_forward" role="dialog" aria-labelledby="dialog">
+  Node 80 has moved places in the next step.
+  <a href="index3.html#80">Click here to move to 80 at its new location.</a>
+  <a href="index3.html#40">Click here to move to 40, the node at 80's current location.</a>
+</dialog>
 
   <script>
+    // Variables
+    var dialog_backwards = document.getElementById("dialog_backwards");
+    var dialog_forward = document.getElementById("dialog_forward");
 
     // adding a sound
     var newSound = new Audio();
     newSound.src = "Highlight.m4a"
 
+    // Code to hide appropriate branches
     function hideBranch() {
       if (document.getElementById("hide").checked == true) {
         document.getElementById("group30").style.visibility="hidden";
@@ -108,16 +125,29 @@
       }
     }
 
+    // Keyboard Shortcuts
     var map = {}; // You could also use an array
     onkeydown = onkeyup = function(e){
       e = e || event; // to deal with IE
       map[e.key] = e.type == 'keydown';
       console.log(map);
       if (map["+"]) {
-        window.location.href = "index3.html#" + document.activeElement.id;
+        // If you're trying to move forward on Node 80, dialog_forward shows up.
+        if (document.getElementById("80")) {
+          dialog_forward.show();
+        }
+        else {
+          window.location.href = "index3.html#" + document.activeElement.id;
+        }
       }
       if (map["-"]) {
-        window.location.href = "index.html#" + document.activeElement.id;
+        // If you're trying to move backwards on Node 80, dialog_backwards shows up.
+        if (document.getElementById("80")) {
+          dialog_backwards.show();
+        }
+        else {
+          window.location.href = "index.html#" + document.activeElement.id;
+        }
       }
     }
    </script>
