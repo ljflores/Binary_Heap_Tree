@@ -97,12 +97,14 @@
   Node 80 was in a different place in the previous step.
   <a href="index3.html#80">Click here to move to 80 at its old location.</a>
   <a href="index3.html#60">Click here to move to 60, the node that was at 80's current location.</a>
+  <a onclick="javascript:hideDialog()" href="#80">Click here to return to Node 80 on this page.</a>
 </dialog>
 
 <!--Forward dialog for 80 (switched places with 60)-->
 <dialog id="dialog_forward_80" role="dialog" aria-labelledby="dialog">
   Returning to Step 1.
   <a href="index.html#60">Click here to move to 60, the original root of the tree.</a>
+  <a onclick="javascript:hideDialog()" href="#80">Click here to return to Node 80 on this page.</a>
 </dialog>
 
 <!--Backwards dialog for 60 (switched places with 80)-->
@@ -110,6 +112,7 @@
   Node 60 was in a different place in the previous step.
   <a href="index3.html#60">Click here to move to 60 at its old location.</a>
   <a href="index3.html#80">Click here to move to 80, the node that was at 60's current location.</a>
+  <a onclick="javascript:hideDialog()" href="#60">Click here to return to Node 60 on this page.</a>
 </dialog>
 
 <!--Forward dialog for 60 (switched places with 80)-->
@@ -117,6 +120,7 @@
   Returning to Step 1.
   <a href="index.html#60">Click here to move to 60 at its original location.</a>
   <a href="index.html#40">Click here to move to 40, the node that was originally at 60's current location.</a>
+  <a onclick="javascript:hideDialog()" href="#60">Click here to return to Node 60 on this page.</a>
 </dialog>
 
   <script>
@@ -133,6 +137,7 @@
     var newSound = new Audio();
     newSound.src = "Highlight.m4a"
 
+    // Code to hide irrelevant branches
     function hideBranch() {
       if (document.getElementById("hide").checked == true) {
         document.getElementById("group30").style.visibility="hidden";
@@ -142,6 +147,14 @@
         document.getElementById("group30").style.visibility="visible";
         document.getElementById("group10_20").style.visibility="visible";
       }
+    }
+
+    // Function to hide dialog boxes
+    function hideDialog() {
+      dialog_backwards_80.close();
+      dialog_forward_80.close();
+      dialog_backwards_60.close();
+      dialog_forward_60.close();
     }
 
     var map = {}; // You could also use an array
