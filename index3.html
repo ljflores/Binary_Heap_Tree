@@ -162,8 +162,9 @@
     var map = {}; // You could also use an array
     onkeydown = onkeyup = function(e){
       e = e || event; // to deal with IE
-      map[e.key] = e.type == 'keydown';
-      if (map["+"]) {
+      map[e.keyCode] = e.type == 'keydown';
+      // "= +" or "Add"
+      if (map[187] || map[107]) {
         if (document.activeElement == node_80) {
             dialog_forward_80.show();
         }
@@ -171,7 +172,8 @@
           window.location.href = "index4.html#" + document.activeElement.id;
         }
       }
-      if (map["-"]) {
+      // "- _" or "Subtract"
+      if (map[189] || map[109]) {
         if (document.activeElement == node_80) {
           dialog_backwards_80.show();
         }
