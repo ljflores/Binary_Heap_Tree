@@ -92,7 +92,42 @@
   </p>
 </div>
 
+<!--Backwards dialog for 80 (switched places with 60)-->
+<dialog id="dialog_backwards_80" role="dialog" aria-labelledby="dialog">
+  Node 80 was in a different place in the previous step.
+  <a href="index3.html#80">Click here to move to 80 at its old location.</a>
+  <a href="index3.html#60">Click here to move to 60, the node that was at 80's current location.</a>
+</dialog>
+
+<!--Forward dialog for 80 (switched places with 60)-->
+<dialog id="dialog_forward_80" role="dialog" aria-labelledby="dialog">
+  Returning to Step 1.
+  <a href="index.html#60">Click here to move to 60, the original root of the tree.</a>
+</dialog>
+
+<!--Backwards dialog for 60 (switched places with 80)-->
+<dialog id="dialog_backwards_60" role="dialog" aria-labelledby="dialog">
+  Node 60 was in a different place in the previous step.
+  <a href="index3.html#60">Click here to move to 60 at its old location.</a>
+  <a href="index3.html#80">Click here to move to 80, the node that was at 60's current location.</a>
+</dialog>
+
+<!--Forward dialog for 60 (switched places with 80)-->
+<dialog id="dialog_forward_60" role="dialog" aria-labelledby="dialog">
+  Returning to Step 1.
+  <a href="index.html#60">Click here to move to 60 at its original location.</a>
+  <a href="index.html#40">Click here to move to 40, the node that was originally at 60's current location.</a>
+</dialog>
+
   <script>
+    // Variables
+    var dialog_backwards_80 = document.getElementById("dialog_backwards_80");
+    var dialog_forward_80 = document.getElementById("dialog_forward_80");
+    var dialog_backwards_60 = document.getElementById("dialog_backwards_60");
+    var dialog_forward_60 = document.getElementById("dialog_forward_60");
+
+    var node_80 = document.getElementById("80");
+    var node_60 = document.getElementById("60");
 
     // adding a sound
     var newSound = new Audio();
@@ -113,12 +148,27 @@
     onkeydown = onkeyup = function(e){
       e = e || event; // to deal with IE
       map[e.key] = e.type == 'keydown';
-      console.log(map);
       if (map["+"]) {
-        window.location.href = "index.html#" + document.activeElement.id;
+        if (document.activeElement == node_80) {
+          dialog_forward_80.show();
+        }
+        else if (document.activeElement == node_60) {
+          dialog_forward_60.show();
+        }
+        else {
+          window.location.href = "index.html#" + document.activeElement.id;
+        }
       }
       if (map["-"]) {
-        window.location.href = "index3.html#" + document.activeElement.id;
+        if (document.activeElement == node_80) {
+          dialog_backwards_80.show();
+        }
+        else if (document.activeElement == node_60) {
+          dialog_backwards_60.show();
+        }
+        else {
+          window.location.href = "index3.html#" + document.activeElement.id;
+        }
       }
     }
    </script>
