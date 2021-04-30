@@ -44,9 +44,8 @@
    <h1 tabindex = "0" id="60">60 (root)</h1>
    <p>
      <ol>
-       <li>Parent is None because 60 is the root.</li>
-       <li>Level is 1.</li>
-       <li>Children are <a href="#30">30</a> and <a href="#40">40</a>.</li>
+       <li>Level 1</li>
+       <li>Children: <a href="#30">30</a> and <a href="#40">40</a></li>
      </ol>
    </p>
 
@@ -54,9 +53,9 @@
     <h2 tabindex = "0" id="30">30</h2>
     <p>
       <ol>
-        <li>Parent is 60.</li>
-        <li>Level is 2.</li>
-        <li>Children are <a href="#10">10</a> and <a href="#20">20</a>.</li>
+        <li>Level 2</li>
+        <li>Parent: <a href="#60">60</a></li>
+        <li>Children: <a href="#10">10</a> and <a href="#20">20</a></li>
       </ol>
     </p>
   </div>
@@ -65,17 +64,17 @@
     <h3 tabindex = "0" id="10">10</h3>
     <p>
       <ol>
-        <li>Parent is <a href="#30">30</a>.</li>
-        <li>Level is 3.</li>
-        <li>There are no children.</li>
+        <li>Level 3</li>
+        <li>Parent: <a href="#30">30</a></li>
+        <li>Children: none</li>
       </ol>
     </p>
     <h3 tabindex = "0" id="20">20</h3>
     <p>
       <ol>
-        <li>Parent is <a href="#30">30</a>.</li>
-        <li>Level is 3.</li>
-        <li>There are no children.</li>
+        <li>Level 3</li>
+        <li>Parent: <a href="#30">30</a></li>
+        <li>Children: none</li>
       </ol>
     </p>
   </div>
@@ -84,9 +83,9 @@
   <h2 tabindex = "0" id="40">40</h2>
   <p>
     <ol>
-      <li>Parent is <a href="#60">60</a>.</li>
-      <li>Level is 2.</li>
-      <li>Child is <a href="#80">80</a>.</li>
+      <li>Level 2</li>
+      <li>Parent: <a href="#60">60</a></li>
+      <li>Children: <a href="#80">80</a></li>
     </ol>
   </p>
 </div>
@@ -96,9 +95,9 @@
     <p>
       <ol>
         <li>What changed: 80 was added as the left child of 40.</li>
-        <li>Parent is <a href="#40">40</a>.</li>
-        <li>Level is 3.</li>
-        <li>There are no children.</li>
+        <li>Level 3</li>
+        <li>Parent: <a href="#40">40</a></li>
+        <li>Children: none</li>
       </ol>
     </p>
 </div>
