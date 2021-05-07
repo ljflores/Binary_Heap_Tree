@@ -9,30 +9,16 @@
     <!--CONTENT OF DOCUMENT-->
     <a id="tree" href="#60">Jump to tree</a>
   
-    <h1 id="shortcuts">Keyboard Commands:</h1>
-    <h2 id="shortcuts">Mac Users:</h2>
+    <h1 id="shortcuts">Instructions</h1>
     <p>
-      Note: If using VoiceOver, ensure that "Quick Nav" is turned off.
       <ul>
-        <li>"+" will move forward one step.</li>
-        <li>"- (minus)" will move backward one step.</li>
-        <li>Use your screen reader's header navigation keys to explore the nodes.</li>
-      </ul>
-    </p>
-    <h2 id="shortcuts">PC Users:</h2>
-    <p>
-      Note: Ensure that "Num Lock" is turned on.
-      <ul>
-        <li>"Numpad +" will move forward one step.</li>
-        <li>"Numpad - (minus)" will move backward one step.</li>
         <li>Use your screen reader's header navigation keys to explore the nodes.</li>
       </ul>
     </p>
 
-    <h1 id="log">What Changed:</h1>
+    <h1 id="log">Step 3: What Changed</h1>
     <p>
       <ul>
-        <li>You are in Step 3.</li>
         <li>Node 80 swapped places with Node 40.</li>
       </ul>
     </p>
@@ -44,7 +30,7 @@
    <h1 tabindex = "0" id="60">60 (root)</h1>
    <p>
      <ul>
-       <li><a href="index2.html#60">Backward</a> <a href="index4.html#60">Forward</a></li>
+       <li><a href="index2.html#60">Backward</a> <a onclick="javascript:self.showForwardDialog_60()" href="#">Forward</a></li>
        <li>Children: <a href="#30">30</a> and <a href="#80">80</a></li>
      </ul>
    </p>
@@ -127,11 +113,20 @@
   <a onclick="javascript:hideDialog()" href="#40">Return to 40 at the current step.</a>
 </dialog>
 
+<!--Forward dialog for 60 (will switch places with 80)-->
+<dialog id="dialog_forward_60" role="dialog" aria-labelledby="dialog">
+  Node 60 will move places in the next step.
+  <a href="index4.html#60">Move to 60 at the next step.</a>
+  <a href="index4.html#80">Move to 80, switching with 60 at the next step.</a>
+  <a onclick="javascript:hideDialog()" href="#60">Return to 60 at the current step.</a>
+</dialog>
+
   <script>
     // Variables
     var dialog_backwards_80 = document.getElementById("dialog_backwards_80");
     var dialog_forward_80 = document.getElementById("dialog_forward_80");
     var dialog_backwards_40 = document.getElementById("dialog_backwards_40");
+    var dialog_forward_60 = document.getElementById("dialog_forward_60");
 
     var node_80 = document.getElementById("80");
     var node_40 = document.getElementById("40");
@@ -157,10 +152,15 @@
       dialog_backwards_80.close();
       dialog_forward_80.close();
       dialog_backwards_40.close();
+      dialog_forward_60.close();
     }
 
     function showForwardDialog_80() {
       dialog_forward_80.show();
+    }
+
+    function showForwardDialog_60() {
+      dialog_forward_60.show();
     }
 
     function showBackwardDialog_80() {
