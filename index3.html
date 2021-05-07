@@ -83,7 +83,7 @@
     <h2 tabindex = "0" id="80" onfocus="newSound.play()">80</h2>
     <p>
       <ul>
-        <li><a href="index2.html#80">Backward</a> <a href="index4.html#80">Forward</a></li>
+        <li><a onclick="javascript:self.showBackwardDialog_80()" href="#">Backward</a> <a onclick="javascript:self.showForwardDialog_80()" href="#">Forward</a></li>
         <li>What changed: 80 swapped places with 40.</li>
         <li>Parent: <a href="#60">60</a></li>
         <li>Children: <a href="#40">40</a></li>
@@ -95,7 +95,7 @@
   <h3 tabindex = "0" id="40" onfocus="newSound.play()">40</h3>
   <p>
     <ul>
-        <li><a href="index2.html#40">Backward</a> <a href="index4.html#40">Forward</a></li>
+        <li><a onclick="javascript:self.showBackwardDialog_40()" href="#">Backward</a> <a href="index4.html#40">Forward</a></li>
         <li>What changed: 40 swapped places with 80.</li>
         <li>Parent: <a href="#80">80</a></li>
         <li>Children: none</li>
@@ -157,6 +157,18 @@
       dialog_backwards_80.close();
       dialog_forward_80.close();
       dialog_backwards_40.close();
+    }
+
+    function showForwardDialog_80() {
+      dialog_forward_80.show();
+    }
+
+    function showBackwardDialog_80() {
+      dialog_backwards_80.show();
+    }
+
+    function showBackwardDialog_40() {
+      dialog_backwards_40.show();
     }
 
     var map = {}; // You could also use an array

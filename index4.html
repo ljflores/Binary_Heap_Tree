@@ -44,7 +44,7 @@
     <h1 tabindex = "0" id="80" onfocus="newSound.play()">80 (root)</h1>
     <p>
       <ul>
-        <li><a href="index3.html#80">Backward</a></li>
+        <li><a onclick="javascript:self.showBackwardDialog_80()" href="#">Backward</a></li>
         <li>What changed: 80 swapped places with 60.</li>
         <li>Children: <a href="#30">30</a> and <a href="#60">60</a></li>
       </ul>
@@ -84,7 +84,7 @@
   <h2 tabindex = "0" id="60" onfocus="newSound.play()">60</h2>
    <p>
      <ul>
-        <li><a href="index3.html#60">Backward</a></li>
+        <li><a onclick="javascript:self.showBackwardDialog_60()" href="#">Backward</a></li>
         <li>What changed: 60 swapped places with 80.</li>
         <li>Parent: <a href="#80">80</a></li>
         <li>Children: <a href="#40">40</a></li>
@@ -165,6 +165,14 @@
       dialog_forward_80.close();
       dialog_backwards_60.close();
       dialog_forward_60.close();
+    }
+
+    function showBackwardDialog_80() {
+      dialog_backwards_80.show();
+    }
+
+    function showBackwardDialog_60() {
+      dialog_backwards_60.show();
     }
 
     var map = {}; // You could also use an array
