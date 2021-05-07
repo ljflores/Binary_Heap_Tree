@@ -10,18 +10,14 @@
     <a href="#main-content">Skip to main content</a>
   
     <h1 id="shortcuts">Instructions</h1>
-    <p>
-      <ul>
+      <ul title="Instructions.">
         <li>Use your screen reader's header navigation keys to explore the nodes.</li>
       </ul>
-    </p>
 
     <h1 id="log">Step 3: What Changed</h1>
-    <p>
-      <ul>
+      <ul title="What Changed.">
         <li>Node 80 swapped places with Node 40.</li>
       </ul>
-    </p>
 
       <label for="hide">Select to hide irrelevant parts of the tree:</label>
       <input type="checkbox" id="hide" name="hide" value="hide" onclick="self.hideBranch()">
@@ -30,65 +26,54 @@
   <main id="main-content"> 
 
    <h1 id="60">60 (root)</h1>
-   <p>
-     <ul>
+     <ul title="Information about node 60.">
        <li><a href="index2.html#60">Backward</a> <a onclick="javascript:self.showForwardDialog_60()" href="#">Forward</a></li>
        <li>Children: <a href="#30">30</a> and <a href="#80">80</a></li>
      </ul>
-   </p>
 
   <div id="group30">
     <h2 id="30">30</h2>
-    <p>
-      <ul>
+      <ul title="Information about node 30.">
         <li><a href="index2.html#30">Backward</a> <a href="index4.html#30">Forward</a></li>
         <li>Parent: <a href="#60">60</a></li>
         <li>Children: <a href="#10">10</a> and <a href="#20">20</a></li>
       </ul>
-    </p>
   </div>
 
   <div id="group10_20">
     <h3 id="10">10</h3>
-    <p>
-      <ul>
+      <ul title="Information about node 10.">
         <li><a href="index2.html#10">Backward</a> <a href="index4.html#10">Forward</a></li>
         <li>Parent: <a href="#30">30</a></li>
         <li>Children: none</li>
       </ul>
-    </p>
+
     <h3 id="20">20</h3>
-    <p>
-      <ul>
+      <ul title="Information about node 20.">
         <li><a href="index2.html#20">Backward</a> <a href="index4.html#20">Forward</a></li>
         <li>Parent: <a href="#30">30</a></li>
         <li>Children: none</li>
       </ul>
-    </p>
   </div>
 
 <div id="group80">
     <h2 id="80" onfocus="newSound.play()">80</h2>
-    <p>
-      <ul>
+      <ul title="Information about node 80.">
         <li><a onclick="javascript:self.showBackwardDialog_80()" href="#">Backward</a> <a onclick="javascript:self.showForwardDialog_80()" href="#">Forward</a></li>
         <li>What changed: 80 swapped places with 40.</li>
         <li>Parent: <a href="#60">60</a></li>
         <li>Children: <a href="#40">40</a></li>
       </ul>
-    </p>
 </div>
 
 <div id="group40">
   <h3 onfocus="newSound.play()">40</h3>
-  <p>
-    <ul>
+    <ul title="Information about node 40.">
         <li><a onclick="javascript:self.showBackwardDialog_40()" href="#">Backward</a> <a href="index4.html#40">Forward</a></li>
         <li>What changed: 40 swapped places with 80.</li>
         <li>Parent: <a href="#80">80</a></li>
         <li>Children: none</li>
     </ul>
-  </p>
 </div>
 
 </main> 
