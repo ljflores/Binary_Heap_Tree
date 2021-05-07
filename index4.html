@@ -80,31 +80,17 @@
 
 <!--Backwards dialog for 80 (switched places with 60)-->
 <dialog tabindex="0" onblur="javascript:hideDialog()" id="dialog_backwards_80" role="dialog" aria-labelledby="dialog">
-  Node 80 was in a different place in the previous step.
+  Node 80 was in a different place in the previous step because it switched with node 60.
   <a href="index3.html#80">Move to 80 at the previous step.</a>
-  <a href="index3.html#60">Move to 60, switching with 80 at the previous step.</a>
-  <a onclick="javascript:hideDialog()" href="#80">Return to 80 at the current step.</a>
-</dialog>
-
-<!--Forward dialog for 80 (switched places with 60)-->
-<dialog tabindex="0" onblur="javascript:hideDialog()" id="dialog_forward_80" role="dialog" aria-labelledby="dialog">
-  Returning to Step 1.
-  <a href="index.html#60">Move to 60, the orignal root of the tree.</a>
-  <a onclick="javascript:hideDialog()" href="#80">Return to 80 at the current step.</a>
+  <a href="index3.html#60">Move to 60 at the previous step.</a>
+  <a onclick="javascript:hideDialog()" href="#80">Stay on 80 at the current step.</a>
 </dialog>
 
 <!--Backwards dialog for 60 (switched places with 80)-->
 <dialog tabindex="0" onblur="javascript:hideDialog()" id="dialog_backwards_60" role="dialog" aria-labelledby="dialog">
-  Node 60 was in a different place in the previous step.
+  Node 60 was in a different place in the previous step because it switched with node 80.
   <a href="index3.html#60">Move to 60 at the previous step.</a>
-  <a href="index3.html#80">Move to 80, switching with 60 at the previous step.</a>
-  <a onclick="javascript:hideDialog()" href="#60">Return to 60 at the current step.</a>
-</dialog>
-
-<!--Forward dialog for 60 (switched places with 80)-->
-<dialog tabindex="0" onblur="javascript:hideDialog()" id="dialog_forward_60" role="dialog" aria-labelledby="dialog">
-  Returning to Step 1.
-  <a href="index.html#60">Move to 60 at Step 1.</a>
+  <a href="index3.html#80">Move to 80 at the previous step.</a>
   <a onclick="javascript:hideDialog()" href="#60">Return to 60 at the current step.</a>
 </dialog>
 
