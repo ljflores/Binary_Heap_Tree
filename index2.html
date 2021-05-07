@@ -94,7 +94,7 @@
     <h3 tabindex = "0" id="80" onfocus="newSound.play()">80</h3>
     <p>
       <ul>
-        <li><a href="index.html#80">Backward</a> <a href="index3.html#80">Forward</a></li>
+        <li><a onclick="javascript:self.showBackwardDialog()" href="#">Backward</a> <a onclick="javascript:self.showForwardDialog()" href="#">Forward</a></li>
         <li>What changed: 80 was added as the left child of 40.</li>
         <li>Parent: <a href="#40">40</a></li>
         <li>Children: none</li>
@@ -139,10 +139,18 @@
       }
     }
 
-    // Function to hide dialog boxes
+    // Function to hide and show dialog boxes
     function hideDialog() {
       dialog_backwards_80.close();
       dialog_forward_80.close();
+    }
+
+    function showForwardDialog() {
+      dialog_forward_80.show();
+    }
+
+    function showBackwardDialog() {
+      dialog_backwards_80.show();
     }
 
     // Keyboard Shortcuts
