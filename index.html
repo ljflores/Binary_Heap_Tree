@@ -19,7 +19,7 @@
    <!--The graph:-->
   <main id="main-content">
 
-   <h1 tabindex = "0" id="60">60 (root)</h1>
+   <h1 id="60">60 (root)</h1>
    <p>
      <ul>
       <li><a href="index2.html#60">Forward</a></li>
@@ -28,7 +28,7 @@
    </p>
 
   <div id="group30">
-    <h2 tabindex = "0" id="30">30</h2>
+    <h2 id="30">30</h2>
     <p>
       <ul>
         <li><a href="index2.html#30">Forward</a></li>
@@ -39,7 +39,7 @@
   </div>
 
   <div id="group10_20">
-    <h3 tabindex = "0" id="10">10</h3>
+    <h3 id="10">10</h3>
     <p>
       <ul>
         <li><a href="index2.html#10">Forward</a></li>
@@ -47,7 +47,7 @@
         <li>Children: none</li>
       </ul>
     </p>
-    <h3 tabindex = "0" id="20">20</h3>
+    <h3 id="20">20</h3>
     <p>
       <ul>
         <li><a href="index2.html#20">Forward</a></li>
@@ -58,7 +58,7 @@
   </div>
 
 <div id="group40">
-  <h2 tabindex = "0" id="40">40</h2>
+  <h2 id="40">40</h2>
   <p>
     <ul>
       <li><a href="index2.html#40">Forward</a></li>
@@ -71,22 +71,7 @@
 </main> 
 
   <script>
-
-    // Key commands
-    var map = {}; // You could also use an array
-    onkeydown = onkeyup = function(e){
-      e = e || event; // to deal with IE
-      map[e.keyCode] = e.type == 'keydown';
-      // "= +" or "Add"
-      if (map[187] || map[107]) {
-        window.location.href = "index2.html#" + document.activeElement.id;
-      }
-      // "- _" or "Subtract"
-      if (map[189] || map[109]) {
-        window.location.href = "index4.html#" + document.activeElement.id;
-      }
-    }
-
+    // For future javascript if needed
    </script>
 
     <!--END CONTENT OF DOCUMENT-->
