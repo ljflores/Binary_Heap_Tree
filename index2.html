@@ -71,7 +71,7 @@
   <h2 tabindex = "0" id="40">40</h2>
   <p>
     <ul>
-      <li><a href="index.html#40">Backward</a> <a href="index3.html#40">Forward</a></li>
+      <li><a href="index.html#40">Backward</a> <a onclick="javascript:self.showForwardDialog_40()" href="#">Forward</a></li>
       <li>Parent: <a href="#60">60</a></li>
       <li>Children: <a href="#80">80</a></li>
     </ul>
@@ -107,10 +107,19 @@
   <a onclick="javascript:hideDialog()" href="#80">Return to 80 at the current step.</a>
 </dialog>
 
+<!--Forward dialog for 40 (will switch places with 80)-->
+<dialog id="dialog_forward_40" role="dialog" aria-labelledby="dialog">
+  Node 40 will move places in the next step.
+  <a href="index3.html#40">Move to 40 at the next step.</a>
+  <a href="index3.html#80">Move to 80, switching with node 40 at the next step.</a>
+  <a onclick="javascript:hideDialog()" href="#40">Return to 40 at the current step.</a>
+</dialog>
+
   <script>
     // Variables
     var dialog_backwards_80 = document.getElementById("dialog_backwards_80");
     var dialog_forward_80 = document.getElementById("dialog_forward_80");
+    var dialog_forward_40 = document.getElementById("dialog_forward_40");
     var node_80 = document.getElementById("80");
 
     // adding a sound
@@ -133,6 +142,7 @@
     function hideDialog() {
       dialog_backwards_80.close();
       dialog_forward_80.close();
+      dialog_forward_40.close();
     }
 
     function showForwardDialog_80() {
@@ -141,6 +151,10 @@
 
     function showBackwardDialog_80() {
       dialog_backwards_80.show();
+    }
+
+    function showForwardDialog_40() {
+      dialog_forward_40.show();
     }
 
     // Keyboard Shortcuts
