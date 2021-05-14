@@ -40,6 +40,12 @@
       <ul title="What Changed.">
         <li>Node 80 switched places with Node 40 because 80 is greater than 40.</li>
       </ul>
+
+      <!--Checkbox & Label for hiding irrelevant parts of the tree--->
+      <label for="hide">Select to hide irrelevant parts of the tree:</label>
+      <input type="checkbox" id="hide" name="hide" value="hide" onclick="self.hideBranch()">
+    <!---------->
+    
     </aside>
     <!---------->
 
@@ -49,11 +55,6 @@
     change type "80" into Insert.
     Each node is a Heading with an unordered list underneath it, surrounded by a div.-->
   <main id="main-content"> 
-
-    <!--Checkbox & Label for hiding irrelevant parts of the tree--->
-    <label for="hide">Select to hide irrelevant parts of the tree:</label>
-    <input type="checkbox" id="hide" name="hide" value="hide" onclick="self.hideBranch()">
-    <!---------->
 
     <!----60---->
     <div id="group60">
